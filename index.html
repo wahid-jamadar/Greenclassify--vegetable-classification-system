@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GreenClassify.com</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #34e05f;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #1f3d2b;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 60px;
+            position: sticky;
+            top: 0;
+        }
+
+        nav h1 {
+            font-size: 22px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav ul li:hover {
+            color: #9be15d;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            color: #1f3d2b;
+            margin-bottom: 15px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        .hero p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 40px;
+            animation: fadeUp 1.3s ease forwards;
+        }
+
+        /* Floating vegetables */
+        .floating span {
+            position: absolute;
+            font-size: 30px;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .floating span:nth-child(1) { left: 10%; top: 30%; }
+        .floating span:nth-child(2) { left: 85%; top: 40%; }
+        .floating span:nth-child(3) { left: 20%; top: 70%; }
+        .floating span:nth-child(4) { left: 75%; top: 75%; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            60% { transform: translateY(-50px); }
+        }
+
+        /* BUTTON */
+        .main-btn {
+            background: #0aac10;
+            border: none;
+            padding: 14px 30px;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: #1f3d2b;
+            transform: translateY(-4px);
+        }
+
+        /* ABOUT */
+        .about {
+            background: #1f3d2b;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about h3 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #13281c;
+            color: #ccc;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h1>GreenClassify.com</h1>
+        <ul>
+            <li onclick="scrollToAbout()">About</li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="floating">
+            <span>🥦</span>
+            <span>🥕</span>
+            <span>🌽</span>
+            <span>🍅</span>
+        </div>
+
+        <h2>Vegetable Image Classification</h2>
+        <p>AI-powered vegetable recognition system</p>
+
+        <!-- Redirect Button -->
+        <a href="prediction.html">
+            <button class="main-btn">Predict the Vegetable</button>
+        </a>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <h3>About GreenClassify</h3>
+        <p>
+            GreenClassify is an AI-powered vegetable recognition platform built using
+            TensorFlow and Flask. Upload an image of a vegetable and our trained deep
+            learning model will identify it instantly with high accuracy.
+        </p>
+    </section>
+
+    <footer>
+        © 2026 GreenClassify | Built with Flask & TensorFlow
+    </footer>
+
+    <script>
+        function scrollToAbout() {
+            document.getElementById("about").scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>
