@@ -41,16 +41,15 @@ vegetable_dataset/ <br>
 └── test/<br>
     └── (same structure as train) <br>
 </details>
-Total Classes: 15
-Images per class: ~1000
-Total images: ~45,000
+Total Classes: 15 <br>
+Images per class: ~1000 <br>
+Total images: ~45,000 <br>
 
 ### 🌐 Backend Flow
 The model is integrated into a web application where users can:
 - Upload an image
-- Get predicted vegetable name
-- View confidence percentage <br>
-Prediction Process:
+- Get predicted vegetable name <br>
+**Prediction Process:**
   - Load image
   - Resize to 224×224
   - Normalize (1/255)
@@ -110,6 +109,12 @@ Then open:
 http://127.0.0.1:5000/
 ```
 ### 🎓 Learning Outcomes
+- Understood the fundamental concepts and techniques of **Convolutional Neural Networks (CNNs).**
+- Gained strong understanding of image data and how deep learning models interpret visual features.
+- Implement **Transfer Learning** using `MobileNetV2` for efficient model training.
+- Build and deploy a real-time image classification web application using the `Flask framework.`
+- Integrate a trained deep learning model `(.h5)` with a frontend interface.
+- Build and deploy a real-time image classification web application using the Flask framework.
 
 ### 📌 Author
 #### Wahid Jamadar <br>
