@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Vegetable | GreenClassify</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #56ab2f, #a8e063);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 420px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 25px;
+            color: #2e7d32;
+        }
+
+        .upload-box {
+            border: 2px dashed #4CAF50;
+            padding: 30px;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .upload-box:hover {
+            background: #f1fff4;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #2e7d32;
+            transform: translateY(-3px);
+        }
+
+        .back-btn {
+            margin-top: 15px;
+            display: inline-block;
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Upload Vegetable Image</h1>
+
+        <!-- IMPORTANT: must match app.py -->
+        <form action="/result" method="POST" enctype="multipart/form-data">
+
+            <label for="image" class="upload-box">
+                Click to Select Image
+            </label>
+
+            <input type="file" name="image" id="image" required>
+
+            <button type="submit">Predict</button>
+
+        </form>
+
+        <a href="/" class="back-btn">← Back to Home</a>
+
+    </div>
+
+    <script>
+        const fileInput = document.getElementById("image");
+        const uploadBox = document.querySelector(".upload-box");
+
+        fileInput.addEventListener("change", function() {
+            if (fileInput.files.length > 0) {
+                uploadBox.textContent = "Selected: " + fileInput.files[0].name;
+            }
+        });
+    </script>
+
+</body>
+</html>
