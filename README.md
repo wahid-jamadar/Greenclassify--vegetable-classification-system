@@ -112,7 +112,7 @@ http://127.0.0.1:5000/
 - Understood the fundamental concepts and techniques of **Convolutional Neural Networks (CNNs).**
 - Gained strong understanding of image data and how deep learning models interpret visual features.
 - Implement **Transfer Learning** using `MobileNetV2` for efficient model training.
-- Trained a deep learning model `` using an image dataset of 15,000 images.
+- Trained a deep learning model `best_vegetable_model.h5` using an image dataset of 15,000 images.
 - Build and deploy a real-time image classification web application using the `Flask framework.`
 - Integrate a trained deep learning model `(.h5)` with a frontend interface.
 - Build and deploy a real-time image classification web application using the Flask framework.
